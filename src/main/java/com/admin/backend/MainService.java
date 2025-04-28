@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +21,7 @@ public class MainService {
     private final MemberRepository memberRepository;
     private final ReservationRepository reservationRepository;
 
+    @Transactional
     public void signup(String memberName, String memberEmail, String memberPassword, String passportNumber) {
         // TODO : 회원가입 처리
         // memberRepository의 saveMember 메서드를 호출하여 회원가입 처리
@@ -39,6 +41,7 @@ public class MainService {
         return null;
     }
 
+    @Transactional
     public Reservation makeReservation(Long memberId, Long flightId) {
         // TODO : 예약 처리
         // memberRepository의 findById 메서드를 호출하여 memberId로 회원 조회
@@ -69,6 +72,7 @@ public class MainService {
         return null;
     }
 
+    @Transactional
     public void cancelReservation(Long reservationId, Long memberId) {
         // TODO : 예약 취소 처리
         // reservationRepository의 findByIdAndMemberId 메서드를 호출하여 reservationId와 memberId로 예약 정보 조회
