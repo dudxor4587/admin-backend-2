@@ -97,7 +97,8 @@ public class MainController {
         // mainService.makeReservation() 메서드를 호출하여 예약 생성
 
         // 예약이 성공적으로 생성되면 예약 ID를 쿼리 파라미터로 전달하여 예약 완료 페이지로 리다이렉트
-        return "redirect:/reservations/success?reservationId=" + reservation.getReservationId();
+        // return "redirect:/reservations/success?reservationId=" + reservation.getReservationId();
+        return null;
     }
 
     /** 예약 완료 페이지 */
