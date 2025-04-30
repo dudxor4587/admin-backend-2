@@ -19,7 +19,7 @@ public class MainController {
     private final MainService mainService;
 
     /** 메인페이지 */
-    @GetMapping("/")
+    // TODO : / 요청을 받아 메인 페이지를 보여주는 메서드(get 요청)
     public String index(Model model, HttpSession session) {
         // TODO : 로그인 상태 처리
         // session에서 memberId를 가져옴
@@ -32,13 +32,13 @@ public class MainController {
     }
 
     /** 회원가입 폼 */
-    @GetMapping("/members/signup")
+    // TODO : /members/signup 요청을 받아 회원가입 폼을 보여주는 메서드(get 요청)
     public String showSignupForm() {
         return "signup";
     }
 
     /** 회원가입 처리 */
-    @PostMapping("/members/signup")
+    // TODO : /members/signup 요청을 받아 회원가입 처리를 하는 메서드(post 요청)
     public String processSignup(@RequestParam String memberName,
                                 @RequestParam String memberEmail,
                                 @RequestParam String memberPassword,
@@ -49,13 +49,13 @@ public class MainController {
     }
 
     /** 로그인 폼 */
-    @GetMapping("/members/login")
+    // TODO : /members/login 요청을 받아 로그인 폼을 보여주는 메서드(get 요청)
     public String showLoginForm() {
         return "login";
     }
 
     /** 로그인 처리 */
-    @PostMapping("/members/login")
+    // TODO : /members/login 요청을 받아 로그인 처리를 하는 메서드(post 요청)
     public String processLogin(@RequestParam String email,
                                  @RequestParam String password, 
                                  HttpSession session) {
@@ -66,7 +66,7 @@ public class MainController {
     }
 
     /** 로그아웃 처리 */
-    @GetMapping("/members/logout")
+    // TODO : /members/logout 요청을 받아 로그아웃 처리를 하는 메서드(get 요청)
     public String logout(HttpSession session) {
         // TODO : 로그아웃 처리
         // session.invalidate()를 호출하여 세션을 무효화
@@ -74,7 +74,7 @@ public class MainController {
     }
 
     /** 검색 결과 표시 */
-    @GetMapping("/flights/search/results")
+    // TODO : /flights/search 요청을 받아 항공편 검색 결과를 보여주는 메서드(get 요청)
     public String showSearchResults(Model model,
                                     @RequestParam String departureAirport,
                                     @RequestParam String arrivalAirport,
@@ -88,7 +88,7 @@ public class MainController {
     }
 
     /** 예약 생성 */
-    @PostMapping("/reservations")
+    // TODO : /reservations 요청을 받아 예약 생성을 처리하는 메서드(post 요청)
     public String makeReservation(@RequestParam Long flightId,
                                   HttpSession session) {
         // TODO : 예약 생성
@@ -102,7 +102,7 @@ public class MainController {
     }
 
     /** 예약 완료 페이지 */
-    @GetMapping("/reservations/success")
+    // TODO : /reservations/success 요청을 받아 예약 완료 페이지를 보여주는 메서드(get 요청)
     public String showReservationSuccess(@RequestParam Long reservationId, Model model) {
         // TODO : 예약 완료 페이지
         // mainService.getReservation() 메서드를 호출하여 예약 정보를 가져옴
@@ -111,7 +111,7 @@ public class MainController {
     }
 
     /** 내 예약 목록 조회 */
-    @GetMapping("/reservations/my")
+    // TODO : /reservations/my 요청을 받아 내 예약 목록을 보여주는 메서드(get 요청)
     public String viewMyReservations(Model model, HttpSession session) {
         // TODO : 내 예약 목록 조회
         // session에서 memberId를 가져옴
@@ -123,7 +123,7 @@ public class MainController {
     }
 
     /** 예약 취소 */
-    @PostMapping("/reservations/{reservationId}/cancel")
+    // TODO : /reservations/{reservationId}/cancel 요청을 받아 예약 취소를 처리하는 메서드(post 요청)
     public String cancelReservation(@PathVariable Long reservationId, HttpSession session) {
         // TODO : 예약 취소
         // session에서 memberId를 가져옴
