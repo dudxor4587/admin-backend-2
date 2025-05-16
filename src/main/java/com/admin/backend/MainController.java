@@ -1,5 +1,7 @@
 package com.admin.backend;
 
+import com.admin.backend.dto.LoginRequest;
+import com.admin.backend.dto.SignupRequest;
 import com.admin.backend.entity.Flight;
 import com.admin.backend.entity.Reservation;
 import jakarta.servlet.http.HttpSession;
@@ -39,10 +41,7 @@ public class MainController {
 
     /** 회원가입 처리 */
     // TODO : /members/signup 요청을 받아 회원가입 처리를 하는 메서드(post 요청)
-    public String processSignup(@RequestParam String memberName,
-                                @RequestParam String memberEmail,
-                                @RequestParam String memberPassword,
-                                @RequestParam String passportNumber) {
+    public String processSignup(@RequestBody SignupRequest signupRequest) {
         // TODO : 회원가입 처리
         // mainService.signup() 메서드를 호출하여 회원가입 처리
         return "redirect:/members/login";
@@ -56,8 +55,7 @@ public class MainController {
 
     /** 로그인 처리 */
     // TODO : /members/login 요청을 받아 로그인 처리를 하는 메서드(post 요청)
-    public String processLogin(@RequestParam String email,
-                                 @RequestParam String password, 
+    public String processLogin(@RequestBody LoginRequest loginRequest,
                                  HttpSession session) {
         // TODO : 로그인 처리
         // mainService.login() 메서드를 호출하여 로그인 처리
