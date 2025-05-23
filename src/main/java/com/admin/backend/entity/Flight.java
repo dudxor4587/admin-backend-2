@@ -16,18 +16,26 @@ public class Flight {
     private Long flightId;
 
     private String flightName;
-    private String departure_airport;
-    private String arrival_airport;
-    private LocalDateTime departure_time;
-    private LocalDateTime arrival_time;
+    private String departureAirport;
+    private String arrivalAirport;
+    private Long fee;
+    private LocalDateTime departureTime;
+    private LocalDateTime arrivalTime;
 
     @Builder
-    public Flight(String flightName, String departure_airport, String arrival_airport, LocalDateTime departure_time, LocalDateTime arrival_time) {
+    public Flight(
+            String flightName,
+            String departureAirport,
+            String arrivalAirport,
+            Long fee,
+            LocalDateTime departureTime,
+            LocalDateTime arrivalTime) {
         this.flightName = flightName;
-        this.departure_airport = departure_airport;
-        this.arrival_airport = arrival_airport;
-        this.departure_time = departure_time;
-        this.arrival_time = arrival_time;
+        this.departureAirport = departureAirport;
+        this.arrivalAirport = arrivalAirport;
+        this.fee = fee;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
     }
 
 }
